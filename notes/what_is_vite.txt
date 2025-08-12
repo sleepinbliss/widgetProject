@@ -1,0 +1,8 @@
+Vite:
+    Vite is amodern frontend build tool that provides fast development and optimized production builds. It serves  your code with lightning-fast hot module replacement (HMR) during development and bundles your app efficiently for production using tools like Rollup. Vute supports frameworks like React, Vue, and Svelte, and is known for its speed and simplicity compared to older tools like Webpack.
+
+    Vite speeds up frontend development by serving your source files directly in the browser and only rebuilding what changes, making updates nearly instant. It also bundles and optimizes your code for production.
+
+    Hot Module Replacement (HMR) is a feature where, when you change a file (like a React component), Vite updates just that part of your app in the browser -- without a full page reload. This keeps your app's state and makes development much faster and smoother.
+
+    HMR updates your code in the browser; React's reconcilation updates the UI based on new data. They work together, but they are not the same thing.

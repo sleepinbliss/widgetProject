@@ -1,0 +1,256 @@
+/* Import Roboto from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+:root {
+	--primary-theme: rgb(9, 102, 9);
+}
+
+#root {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	font-family: "Roboto", Arial, sans-serif; /* Use Roboto for root */
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	transition: 0.1s ease;
+	font-family: "Roboto", Arial, sans-serif;
+	user-select: none;
+}
+/* body {
+	width: 100dvw;
+	height: 100dvh;
+	display: flex;
+	justify-content: center;
+}  */
+#root {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	height: 100dvh;
+	width: 100dvw;
+}
+#root > div {
+	margin: 0 auto;
+	width: 100%;
+}
+.listItemsContainer {
+	width: 100%;
+	min-height: 230px;
+	display: flex;
+	flex-direction: column;
+}
+.unorderedList {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 0.1rem;
+	/* padding: 0.5rem; */
+}
+.listItem {
+	background-color: rgba(18, 18, 18, 0.805);
+	padding: 0.5rem;
+	padding-left: 0.5rem;
+	border-radius: 5px;
+	width: 100%;
+	text-align: left;
+	font-size: large;
+	font-family: "Roboto", Arial, sans-serif;
+	letter-spacing: 0.1rem;
+	user-select: none;
+	cursor: pointer;
+	display: grid;
+	grid-template-columns: 2fr 0.5fr;
+}
+.listItem > span {
+	/* padding: 0.3rem; */
+	display: flex;
+	align-items: center;
+}
+.optionsContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: right;
+	border-radius: 5px;
+}
+.optionsContainer > span {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0.5rem;
+	border-radius: 5px;
+}
+.listItem:hover {
+	background-color: rgb(26, 26, 26);
+	border-radius: 5px;
+}
+.options:hover {
+	box-shadow: inset 0px 0px 5px 3px rgba(0, 0, 0, 0.226);
+	border-radius: 5px;
+}
+.strikethrough {
+	text-decoration: line-through;
+}
+/* .darkenBack {
+	background-color: rgb(12, 12, 12);
+	border-radius: 5px;
+} */
+.addButton {
+	background-color: var(--primary-theme);
+	color: #fff;
+	border: none;
+	width: 30px;
+	height: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: background 0.2s;
+	padding: 0;
+	border-radius: 4px;
+}
+.addButton:hover {
+	background-color: #1565c0;
+}
+
+.addButton:focus {
+	outline: none;
+	box-shadow: none;
+}
+
+.newItemName {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.3rem;
+	margin-bottom: 0.4rem;
+}
+
+.newItemName input {
+	outline: none;
+	border: none;
+	text-indent: 0.5rem;
+	border-radius: 5px;
+	width: 100%;
+	height: 40px;
+	font-size: large;
+	font-family: "Roboto", Arial, sans-serif;
+}
+
+.widgetContainer {
+	background: linear-gradient(
+		135deg,
+		rgba(18, 18, 18, 0.7) 0%,
+		rgba(40, 40, 40, 0.5) 100%
+	);
+	border-radius: 16px;
+	box-shadow: 0 4px 32px 0 rgba(0, 0, 0, 0.37);
+	backdrop-filter: blur(12px); /* glass effect */
+	-webkit-backdrop-filter: blur(12px); /* Safari support */
+	/* border: 1px solid rgba(255, 255, 255, 0.18); */
+	padding: 1rem;
+	width: 100%;
+}
+
+.bentoGrid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: auto auto; /* Let rows grow with content */
+	gap: 1rem;
+	padding: 2rem;
+	align-items: stretch; /* Ensure all items stretch to row height */
+	width: 90%;
+	margin: 0 auto;
+}
+
+.bentoItem {
+	background: linear-gradient(135deg, #222 0%, #333 100%);
+	border-radius: 16px;
+	box-shadow: 0 4px 32px 0 rgba(0, 0, 0, 0.15);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.2rem;
+	color: #fff;
+}
+.bentoItem:hover {
+	transform: translateY(-3px);
+	filter: brightness(1.1);
+	box-shadow: 0 6px 32px 0 rgba(0, 0, 0, 0.25);
+}
+
+.bentoItem.large {
+	grid-column: span 2;
+	grid-row: span 1;
+}
+
+.bentoItem.wide {
+	grid-column: span 2;
+}
+.bentoItem.mid {
+	grid-column: span 1;
+}
+.bentoItem.todo {
+	grid-column: span 1;
+}
+.bentoItem.diet {
+	grid-column: span 2;
+}
+
+.bentoItem.chessQuiz {
+	grid-column: span 4;
+}
+
+.verticalDivider {
+	width: 2px;
+	height: 58px;
+	background: rgba(255, 255, 255, 0.093);
+	margin: 0 1rem;
+	border-radius: 1px;
+	align-self: center;
+}
+.dateContainer {
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 15px;
+	padding: 1rem;
+}
+.timeDateContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	user-select: none;
+	background: linear-gradient(135deg, rgb(23, 23, 23) 0%, rgb(19, 19, 19) 100%);
+	border-bottom: 4px solid var(--primary-theme);
+}
+.timeContainer {
+}
+
+h3 {
+	text-align: left;
+	padding: 0.2rem;
+}
+
+body {
+	background-color: #1a1a1a;
+	background-image: radial-gradient(
+		circle at 1px 1px,
+		rgba(47, 182, 216, 0.048) 1px,
+		transparent 0
+	);
+	background-size: 20px 20px;
+}
+
+.diet {
+	height: 300px;
+}
