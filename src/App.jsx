@@ -19,6 +19,8 @@ function App() {
 		visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 	};
 
+
+
 	return (
 		<>
 			<motion.div
@@ -31,23 +33,21 @@ function App() {
 				</motion.div>
 				<div className="bentoGrid">
 					<motion.div className="bentoItem large" variants={itemVariants}>
-						Typing Practice
+						<span> Typing </span>
 					</motion.div>
-					<motion.div className="bentoItem mid" variants={itemVariants}>
-						Task Timer
-					</motion.div>
+                    <motion.div className="bentoItem chessQuiz" variants={itemVariants}>
+                        <span>Profile</span>
+                    </motion.div>
 					<motion.div className="bentoItem todo" variants={itemVariants}>
-						<TodoList />
+                       <TodoList />
 					</motion.div>
 					<motion.div className="bentoItem wide" variants={itemVariants}>
-						Flash Cards
+                        <span>Flash Cards </span>
 					</motion.div>
 					<motion.div className="bentoItem diet" variants={itemVariants}>
-						Diet Card
+                        <span>Diet Card</span>
 					</motion.div>
-					<motion.div className="bentoItem chessQuiz" variants={itemVariants}>
-						Chess Sequence Quiz
-					</motion.div>
+
 				</div>
 			</motion.div>
 		</>
