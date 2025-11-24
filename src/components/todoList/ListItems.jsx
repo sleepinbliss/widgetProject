@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FaEdit, FaTrash } from "react-icons/fa";
 
-function ListItems({ itemName }) {
+function ListItems({ itemName, id, onRemove }) {
 	const [isStrikethrough, setIsStrikethrough] = useState(false);
 	function strikethroughText() {
 		setIsStrikethrough((prev) => !prev);
@@ -25,6 +25,7 @@ function ListItems({ itemName }) {
 							cursor: "pointer",
 							color: "red",
 						}}
+						onClick={() => onRemove(id)}
 					/>
 				</span>
 			</div>

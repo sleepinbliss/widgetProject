@@ -13,10 +13,13 @@ function TodoList() {
 			setItems([...items, { id: Date.now(), name }]); // Add unique ID
 		}
 	}
+	function removeItem(id) {
+		setItems(items.filter(item => item.id !== id));
+	}
 
 	return (
 		<>
-			<div className="widgetContainer">
+			<div>
 				<h3>To-do List</h3>
 				<div className="listItemsContainer">
 					<InputItem onAddItem={addItem} />
@@ -37,7 +40,11 @@ function TodoList() {
 											exit={{ opacity: 0, y: -20 }}
 											transition={{ duration: 0.3 }}
 										>
-											<ListItems itemName={item.name} />
+											<ListItems
+												itemName={item.name}
+												id={item.id}
+												onRemove={removeItem}
+											/>
 										</motion.div>
 									))}
 								</AnimatePresence>

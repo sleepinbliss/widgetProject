@@ -47,14 +47,7 @@ function App() {
 						<TypingPractice />
 					</motion.div>
 					<motion.div
-						className="bentoItem mid"
-						variants={itemVariants}
-						onMouseMove={handleMouseMove}
-					>
-						Task Timer
-					</motion.div>
-					<motion.div
-						className="bentoItem todo"
+						className="bentoItem todo widgetContainer"
 						variants={itemVariants}
 						onMouseMove={handleMouseMove}
 					>
