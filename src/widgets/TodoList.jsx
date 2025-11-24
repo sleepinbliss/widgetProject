@@ -16,11 +16,10 @@ function TodoList() {
 	function removeItem(id) {
 		setItems(items.filter(item => item.id !== id));
 	}
-
 	return (
 		<>
 			<div>
-				<h3>To-do List</h3>
+				{/* <h3>To-do List</h3> */}
 				<div className="listItemsContainer">
 					<InputItem onAddItem={addItem} />
 					<AnimatePresence>

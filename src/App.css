@@ -1,6 +1,10 @@
 /* Import Roboto from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+/* html {
+	height: 100dvh;
+} */
+
 :root {
 	--primary-theme: rgb(9, 102, 9);
 }
@@ -30,13 +34,14 @@
 	display: flex;
 	flex-direction: column;
 	align-items: start;
-	height: 100dvh;
+	/* height: 100dvh; */
 	width: 100dvw;
 }
 #root > div {
 	margin: 0 auto;
 	width: 100%;
 }
+
 /* .listItemsContainer {
 	width: 100%;
 	min-height: 230px;
@@ -164,6 +169,8 @@
 }
 
 .bentoGrid {
+	position: relative; /* Needed for pseudo-element positioning */
+	overflow: hidden; /* Hide the overflow of the fade */
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	grid-template-rows: auto auto; /* Let rows grow with content */
@@ -171,7 +178,23 @@
 	padding: 2rem;
 	align-items: stretch; /* Ensure all items stretch to row height */
 	width: 90%;
+	height: 100dvh;
 	margin: 0 auto;
+	background: rgba(20, 20, 20, 0.95);
+}
+
+.bentoGrid::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+	/* Radial fade out: transparent in center, black at edges */
+	background: radial-gradient(
+		ellipse at center,
+		rgba(0, 0, 0, 0) 70%,
+		rgba(26, 26, 26, 0.85) 100%
+	);
+	/* Adjust the colors and stops as needed for your look */
 }
 
 .bentoItem {
@@ -180,37 +203,55 @@
 	box-shadow: 0 4px 32px 0 rgba(0, 0, 0, 0.15);
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: left;
 	font-size: 1.2rem;
 	color: #fff;
-}
-.bentoItem:hover {
-	transform: translateY(-3px);
-	/* filter: brightness(1.1); */
-	box-shadow: 0 6px 32px 0 rgba(0, 0, 0, 0.25);
-	/* cursor: pointer; */
+	padding: 1rem;
+	height: 100%;
+	filter: brightness(1);
+	cursor: pointer;
+	transition: transform 0.2s cubic-bezier(0.4, 2, 0.6, 1), box-shadow 0.2s,
+		filter 5s ease;
 }
 
 .bentoItem.large {
 	grid-column: span 2;
-	grid-row: span 1;
-	height: fit-content;
+	grid-row: span 2;
 }
 
 .bentoItem.wide {
 	grid-column: span 2;
+	grid-row: span 2;
 }
 .bentoItem.mid {
 	grid-column: span 1;
 }
 .bentoItem.todo {
 	grid-column: span 1;
-	height: fit-content;
-	width: fit-content;
-	padding: 1rem;
+	grid-row: span 2;
+	background: linear-gradient(
+		135deg,
+		rgba(255, 255, 255, 0.08) 0%,
+		rgba(255, 255, 255, 0.02) 100%
+	);
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+	border: 1px solid rgba(255, 255, 255, 0.15);
+	box-shadow: 0 4px 32px 0 rgba(0, 0, 0, 0.15);
 }
+
+.bentoItem.todo > div {
+	height: 100%;
+	width: 100%;
+}
+
 .bentoItem.diet {
-	grid-column: span 2;
+	grid-column: span 1;
+	grid-row: span 1;
+}
+.bentoItem.watchlist {
+	grid-column: span 1;
+	grid-row: span 1;
 }
 
 .bentoItem.chessQuiz {
@@ -258,30 +299,31 @@ body {
 	background-color: #1a1a1a;
 	background-image: radial-gradient(
 		circle at 1px 1px,
-		rgba(47, 216, 72, 0.048) 1px,
+		rgba(43, 255, 61, 0.055) 1px,
 		transparent 0
 	);
 	background-size: 20px 20px;
 }
 
 .diet {
-	height: 300px;
 }
 
 /* Typing Practice */
 .TypingContainer {
 	display: grid;
-	grid-template-rows: fit-content 1fr;
+	grid-template-rows: 3fr 0.2fr;
 	gap: 1rem;
 	width: 100%;
-	padding: 2rem;
+	height: 100%;
 }
 
 .TypingContainer input {
 	width: 100%;
 	height: 100%;
 	outline: none;
+	border: none;
 	padding: 0.3rem;
+	font-size: larger;
 }
 
 .InputBox {
@@ -290,8 +332,18 @@ body {
 }
 
 .TextBox {
-	background-color: #1a1a1a;
+	background-color: #1a1a1a31;
 	padding: 1rem;
-	border-radius: 1px;
+	border-radius: 3px;
 	height: fit-content;
+	height: 100%;
+	display: flex;
+	justify-content: flex-start;
+	overflow-y: scroll;
 }
+
+/* .bentoItem:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 6px 32px 0 rgba(0, 0, 0, 0.25);
+	background-color: red;
+} */
