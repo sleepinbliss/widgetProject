@@ -1,5 +1,6 @@
 import "./App.css";
 import TodoList from "./widgets/TodoList";
+import TypingPractice from "./widgets/TypingPractice";
 import DateContainer from "./components/todoList/DateContainer";
 import { motion } from "framer-motion";
 
@@ -19,6 +20,14 @@ function App() {
 		visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 	};
 
+	const handleMouseMove = (e) => {
+		const rect = e.currentTarget.getBoundingClientRect();
+		const x = e.clientX - rect.left;
+		const y = e.clientY - rect.top;
+		e.currentTarget.style.setProperty("--x", `${x}px`);
+		e.currentTarget.style.setProperty("--y", `${y}px`);
+	};
+
 	return (
 		<>
 			<motion.div
@@ -30,22 +39,46 @@ function App() {
 					<DateContainer />
 				</motion.div>
 				<div className="bentoGrid">
-					<motion.div className="bentoItem large" variants={itemVariants}>
-						Typing Practice
+					<motion.div
+						className="bentoItem large"
+						variants={itemVariants}
+						onMouseMove={handleMouseMove}
+					>
+						<TypingPractice />
 					</motion.div>
-					<motion.div className="bentoItem mid" variants={itemVariants}>
+					<motion.div
+						className="bentoItem mid"
+						variants={itemVariants}
+						onMouseMove={handleMouseMove}
+					>
 						Task Timer
 					</motion.div>
-					<motion.div className="bentoItem todo" variants={itemVariants}>
+					<motion.div
+						className="bentoItem todo"
+						variants={itemVariants}
+						onMouseMove={handleMouseMove}
+					>
 						<TodoList />
 					</motion.div>
-					<motion.div className="bentoItem wide" variants={itemVariants}>
+					<motion.div
+						className="bentoItem wide"
+						variants={itemVariants}
+						onMouseMove={handleMouseMove}
+					>
 						Flash Cards
 					</motion.div>
-					<motion.div className="bentoItem diet" variants={itemVariants}>
+					<motion.div
+						className="bentoItem diet"
+						variants={itemVariants}
+						onMouseMove={handleMouseMove}
+					>
 						Diet Card
 					</motion.div>
-					<motion.div className="bentoItem chessQuiz" variants={itemVariants}>
+					<motion.div
+						className="bentoItem chessQuiz"
+						variants={itemVariants}
+						onMouseMove={handleMouseMove}
+					>
 						Chess Sequence Quiz
 					</motion.div>
 				</div>

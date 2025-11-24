@@ -182,8 +182,9 @@
 }
 .bentoItem:hover {
 	transform: translateY(-3px);
-	filter: brightness(1.1);
+	/* filter: brightness(1.1); */
 	box-shadow: 0 6px 32px 0 rgba(0, 0, 0, 0.25);
+	/* cursor: pointer; */
 }
 
 .bentoItem.large {
@@ -233,8 +234,8 @@
 	background: linear-gradient(135deg, rgb(23, 23, 23) 0%, rgb(19, 19, 19) 100%);
 	border-bottom: 4px solid var(--primary-theme);
 }
-.timeContainer {
-}
+/* .timeContainer {
+} */
 
 h3 {
 	text-align: left;
@@ -245,7 +246,7 @@ body {
 	background-color: #1a1a1a;
 	background-image: radial-gradient(
 		circle at 1px 1px,
-		rgba(47, 182, 216, 0.048) 1px,
+		rgba(47, 216, 72, 0.048) 1px,
 		transparent 0
 	);
 	background-size: 20px 20px;
@@ -253,4 +254,30 @@ body {
 
 .diet {
 	height: 300px;
+}
+
+/* Typing Practice */
+.TypingContainer {
+	display: grid;
+	grid-template-rows: 8fr 1fr;
+	gap: 1rem;
+	width: 100%;
+	padding: 2rem;
+}
+
+.TypingContainer input {
+	width: 100%;
+	height: 100%;
+	outline: none;
+}
+
+.InputBox {
+	height: 100%;
+	width: 100%;
+}
+
+.TextBox {
+	background-color: #131212;
+	padding: 1rem;
+	border-radius: 1px;
 }
