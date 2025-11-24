@@ -1,5 +1,5 @@
 function TypingPractice() {
-	function CheckInput() {}
+    function CheckInput(){}
 	return (
 		<>
 			<div className="TypingContainer">
@@ -10,7 +10,7 @@ function TypingPractice() {
 					</article>
 				</div>
 				<div className="InputBox">
-					<input type="text" onChange={CheckInput} />
+					<input type="text" onChange={CheckInput}/>
 				</div>
 			</div>
 		</>
